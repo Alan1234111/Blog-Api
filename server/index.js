@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const path = requrie("path");
+const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
@@ -10,18 +10,15 @@ const LocalStrategy = require("passport-local").Strategy;
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
+const postRouter = require("./routes/post");
+
 const PORT = process.env.PORT || 5001;
 
 const app = express();
 
 app.use(cors());
 
-app.get("/api", (req, res) => {
-  res.json({message: "Hello from server!"});
-});
-
 // Set up mongoose connection
-const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 const mongoDB = process.env.DB_URL;
 
@@ -30,6 +27,13 @@ async function main() {
   await mongoose.connect(mongoDB);
 }
 
+app.use("/post", postRouter);
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(session({secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true}));
@@ -37,7 +41,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "server")));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
