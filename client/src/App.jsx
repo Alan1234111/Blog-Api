@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import Header from "./components/Header";
+import Main from "./components/Main";
 import GlobalStyles from "./components/styles/Global";
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
     <div>
       <GlobalStyles />
       <Header />
+      <Main />
     </div>
   );
 }
