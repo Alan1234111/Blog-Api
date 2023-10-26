@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import GlobalStyles from "./components/styles/Global";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import SectionPosts from "./components/SectionPosts";
-import GlobalStyles from "./components/styles/Global";
+import TagSection from "./components/TagsSection";
 
 export default function App() {
   // const [data, setData] = useState(null);
@@ -21,6 +22,7 @@ export default function App() {
       <GlobalStyles />
       <Header />
       <Main />
+      <TagSection />
       <hr></hr>
       <SectionPosts />
     </div>

@@ -6,7 +6,7 @@ export const StyledTag = styled.a`
   color: #000;
   font-size: 0.6rem;
   font-weight: normal;
-  border: 3px solid;
+  border: 1px solid black;
   padding: 0.5em 1em;
   box-shadow: -4px 3px 0 0 #000;
   background-color: white;
