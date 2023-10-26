@@ -1,0 +1,39 @@
+import styled from "styled-components";
+
+export const StyledPostsContainer = styled.article`
+  display: flex;
+  width: 65%;
+  margin: 0 auto 1em;
+
+  img {
+    width: 40%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    width: 60%;
+  }
+
+  div a {
+    order: 1;
+    margin-bottom: 2em;
+    width: fit-content;
+  }
+
+  div h2 {
+    order: 2;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  div p {
+    order: 3;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+`;

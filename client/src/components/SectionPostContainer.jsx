@@ -1,9 +1,9 @@
-import { StyledMainPost } from "./styles/MainPost.styled";
+import { StyledPostsContainer } from "./styles/SectionPostsContainer.styled";
 import { StyledTag } from "./styles/tag.styled";
 import PropTypes from "prop-types";
 
-export default function MainPostContainer(props) {
-  MainPostContainer.propTypes = {
+export default function SectionPostContainer(props) {
+  SectionPostContainer.propTypes = {
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
@@ -11,15 +11,13 @@ export default function MainPostContainer(props) {
   };
 
   return (
-    <StyledMainPost className="post">
-      <div className="post-info">
+    <StyledPostsContainer>
+      <img src={props.photoUrl} alt="" />
+      <div className="post-information">
         <h2>{props.title}</h2>
         <p>{props.content}</p>
-      </div>
-      <div className="post-display">
         <StyledTag>{props.tag}</StyledTag>
-        <img src={props.photoUrl} alt="" />
       </div>
-    </StyledMainPost>
+    </StyledPostsContainer>
   );
 }

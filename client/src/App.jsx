@@ -1,6 +1,7 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import SectionPosts from "./components/SectionPosts";
 import GlobalStyles from "./components/styles/Global";
 
 export default function App() {
@@ -14,11 +15,14 @@ export default function App() {
   //     });
   // }, []);
 
+  // console.log(data[0].photoUrl);
   return (
     <div>
       <GlobalStyles />
       <Header />
       <Main />
+      <hr></hr>
+      <SectionPosts />
     </div>
   );
 }

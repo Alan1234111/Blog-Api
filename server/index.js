@@ -9,6 +9,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const multer = require("multer");
 
 const postRouter = require("./routes/post");
 
@@ -27,6 +28,20 @@ async function main() {
   await mongoose.connect(mongoDB);
 }
 
+// Define storage for uploaded files
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    // Specify the directory where uploaded files will be stored
+    cb(null, "uploads/");
+  },
+  filename: (req, file, cb) => {
+    // Set the filename for the uploaded file
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage });
+
 app.use("/post", postRouter);
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
@@ -36,10 +51,16 @@ app.get("*", (req, res) => {
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(session({secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true}));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "server")));
 
