@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledPostsContainer = styled.article`
   display: flex;
-  width: 65%;
+  width: 60%;
   margin: 0 auto 1em;
 
   img {

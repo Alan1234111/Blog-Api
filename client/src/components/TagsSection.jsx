@@ -1,7 +1,7 @@
-import { StyledTagSection } from "./styles/TagSection.styled";
-import { StyledTag } from "./styles/tag.styled";
+import {StyledTagSection} from "./styles/TagSection.styled";
+import {StyledTag} from "./styles/tag.styled";
 
-export default function TagSection() {
+export default function TagsSection() {
   return (
     <StyledTagSection>
       <h2>FEATURED TAGS</h2>

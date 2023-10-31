@@ -1,4 +1,4 @@
-import { StyledMain } from "./styles/Main.styled";
+import {StyledMain} from "./styles/Main.styled";
 import MainPostContainer from "./MainPostContainer";
 
 export default function Main() {

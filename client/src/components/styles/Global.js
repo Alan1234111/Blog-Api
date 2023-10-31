@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import {createGlobalStyle} from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -8,8 +8,6 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        margin: 0 auto;
-        max-width: 1200px;
         font-family: 'Poppins', sans-serif;
     }
 

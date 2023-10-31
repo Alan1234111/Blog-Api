@@ -1,9 +1,19 @@
-import { useEffect, useState } from "react";
-import GlobalStyles from "./components/styles/Global";
+import {RouterProvider, createBrowserRouter, createRoutesFromElements, Route} from "react-router-dom";
+import {useEffect, useState} from "react";
+import Home from "./pages/Home";
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Main from "./components/MainPosts";
 import SectionPosts from "./components/SectionPosts";
 import TagSection from "./components/TagsSection";
+import Layout from "./components/Layout";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+    </Route>
+  )
+);
 
 export default function App() {
   // const [data, setData] = useState(null);
@@ -17,14 +27,17 @@ export default function App() {
   // }, []);
 
   // console.log(data[0].photoUrl);
-  return (
-    <div>
-      <GlobalStyles />
-      <Header />
-      <Main />
-      <TagSection />
-      <hr></hr>
-      <SectionPosts />
-    </div>
-  );
+
+  return <RouterProvider router={router} />;
+
+  // return (
+  //   <div>
+  //     <GlobalStyles />
+  //     <Header />
+  //     <Main />
+  //     <TagSection />
+  //     <hr></hr>
+  //     <SectionPosts />
+  //   </div>
+  // );
 }

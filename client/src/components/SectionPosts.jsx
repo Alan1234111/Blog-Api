@@ -1,6 +1,6 @@
 import SectionPostContainer from "./SectionPostContainer";
 
-export default function Posts() {
+export default function SectionPosts() {
   return (
     <section>
       <SectionPostContainer

@@ -4,6 +4,8 @@ export const StyledMain = styled.main`
   display: grid;
   grid-template-columns: 1.3fr 2fr 1.3fr;
   grid-template-rows: repeat(2, 375px);
+  max-width: 1200px;
+  margin: 0 auto;
 
   .post:nth-child(1) {
     grid-column: 1/2;
