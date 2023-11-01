@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
 export const StyledSinglePost = styled.section`
-  hr {
-    width: 100%;
-    margin: 1em;
-  }
-
   .comment-container {
     display: flex;
     flex-direction: column;

@@ -1,4 +1,3 @@
-import {StyledTag} from "../components/styles/Tag.styled";
 import {StyledSinglePost} from "../components/Post/PostStyles/Post.styled";
 import {StyledTagsContainer} from "../components/Post/PostStyles/TagsContainer.styled";
 import PostContent from "../components/Post/PostContent";
