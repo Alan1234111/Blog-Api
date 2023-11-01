@@ -6,7 +6,7 @@ export const StyledPostsContainer = styled.article`
   margin: 0 auto 1em;
 
   img {
-    width: 40%;
+    width: 30%;
     height: 200px;
     object-fit: cover;
   }
@@ -15,7 +15,7 @@ export const StyledPostsContainer = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2em;
+    padding: 2em 1em 2em 2em;
     width: 60%;
   }
 

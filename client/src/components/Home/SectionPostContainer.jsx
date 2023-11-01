@@ -1,5 +1,5 @@
-import { StyledPostsContainer } from "./styles/SectionPostsContainer.styled";
-import { StyledTag } from "./styles/tag.styled";
+import {StyledPostsContainer} from "./HomeStyles/SectionPostsContainer.styled";
+import {StyledTag} from "../styles/Tag.styled";
 import PropTypes from "prop-types";
 
 export default function SectionPostContainer(props) {

@@ -17,7 +17,5 @@ export const StyledTagSection = styled.section`
 
   a {
     margin: 0 1.5em;
-    padding: 0.7em 1.2em;
-    font-size: 0.7rem;
   }
 `;

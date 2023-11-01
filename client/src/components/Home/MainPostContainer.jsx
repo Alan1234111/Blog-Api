@@ -1,5 +1,5 @@
-import { StyledMainPost } from "./styles/MainPost.styled";
-import { StyledTag } from "./styles/tag.styled";
+import {StyledMainPost} from "./HomeStyles/MainPost.styled";
+import {StyledTag} from "../styles/Tag.styled";
 import PropTypes from "prop-types";
 
 export default function MainPostContainer(props) {
