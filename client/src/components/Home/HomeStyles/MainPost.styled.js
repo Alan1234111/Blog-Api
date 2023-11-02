@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const StyledMainPost = styled.div`
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: #000;
 
   .post-display {
     position: relative;

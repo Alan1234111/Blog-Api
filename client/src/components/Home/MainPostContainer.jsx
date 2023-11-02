@@ -1,6 +1,7 @@
-import {StyledMainPost} from "./HomeStyles/MainPost.styled";
-import {StyledTag} from "../styles/Tag.styled";
+import { StyledMainPost } from "./HomeStyles/MainPost.styled";
+import { StyledTag } from "../styles/Tag.styled";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function MainPostContainer(props) {
   MainPostContainer.propTypes = {
@@ -11,7 +12,7 @@ export default function MainPostContainer(props) {
   };
 
   return (
-    <StyledMainPost className="post">
+    <StyledMainPost as={Link} to="/login" className="post">
       <div className="post-info">
         <h2>{props.title}</h2>
         <p>{props.content}</p>
